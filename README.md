@@ -4,7 +4,7 @@
 
 ![ssh workflow](./images/ssh-workflow.png)
 
-[![Actions Status](https://github.com/appleboy/ssh-action/workflows/remote%20ssh%20command/badge.svg)](https://github.com/appleboy/ssh-action/actions)
+[![Actions Status](https://github.com/intrepidws/ssh-action/workflows/remote%20ssh%20command/badge.svg)](https://github.com/intrepidws/ssh-action/actions)
 
 ## Usage
 
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
+      uses: intrepidws/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -77,7 +77,7 @@ Executing remote ssh commands using password.
 
 ```yaml
 - name: executing remote ssh commands using password
-  uses: appleboy/ssh-action@master
+  uses: intrepidws/ssh-action@master
   with:
     host: ${{ secrets.HOST }}
     username: ${{ secrets.USERNAME }}
@@ -90,7 +90,7 @@ Using private key
 
 ```yaml
 - name: executing remote ssh commands using ssh key
-  uses: appleboy/ssh-action@master
+  uses: intrepidws/ssh-action@master
   with:
     host: ${{ secrets.HOST }}
     username: ${{ secrets.USERNAME }}
@@ -103,7 +103,7 @@ Multiple Commands
 
 ```yaml
 - name: multiple command
-  uses: appleboy/ssh-action@master
+  uses: intrepidws/ssh-action@master
   with:
     host: ${{ secrets.HOST }}
     username: ${{ secrets.USERNAME }}
@@ -120,7 +120,7 @@ Multiple Hosts
 
 ```diff
   - name: multiple host
-    uses: appleboy/ssh-action@master
+    uses: intrepidws/ssh-action@master
     with:
 -     host: "foo.com"
 +     host: "foo.com,bar.com"
@@ -136,7 +136,7 @@ Synchronous execution on multiple hosts
 
 ```diff
   - name: multiple host
-    uses: appleboy/ssh-action@master
+    uses: intrepidws/ssh-action@master
     with:
       host: "foo.com,bar.com"
 +     sync: true
@@ -152,7 +152,7 @@ Pass environment variable to shell script
 
 ```diff
   - name: pass environment
-    uses: appleboy/ssh-action@master
+    uses: intrepidws/ssh-action@master
 +   env:
 +     FOO: "BAR"
 +     BAR: "FOO"
@@ -171,7 +171,7 @@ Stop script after first failure. ex: missing `abc` folder
 
 ```diff
   - name: stop script if command error
-    uses: appleboy/ssh-action@master
+    uses: intrepidws/ssh-action@master
     with:
       host: ${{ secrets.HOST }}
       username: ${{ secrets.USERNAME }}
@@ -224,7 +224,7 @@ How to convert to YAML format of GitHubActions.
 
 ```diff
   - name: ssh proxy command
-    uses: appleboy/ssh-action@master
+    uses: intrepidws/ssh-action@master
     with:
       host: ${{ secrets.HOST }}
       username: ${{ secrets.USERNAME }}
@@ -243,7 +243,7 @@ Protecting a Private Key. The purpose of the passphrase is usually to encrypt th
 
 ```diff
   - name: ssh key passphrase
-    uses: appleboy/ssh-action@master
+    uses: intrepidws/ssh-action@master
     with:
       host: ${{ secrets.HOST }}
       username: ${{ secrets.USERNAME }}
